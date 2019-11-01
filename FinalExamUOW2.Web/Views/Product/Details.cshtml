@@ -1,0 +1,63 @@
+﻿@*@model IEnumerable<Product>*@
+
+@model X.PagedList.PagedList<FinalExamUOW2.Data.Models.Product>
+@using X.PagedList.Mvc.Core
+
+@{
+    ViewData["Title"] = "GetByCategoryId";
+}
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Exo+2" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<div style="padding-top:17px">
+    <h1 class="page-header">
+
+        Ürün Listesi
+
+        @*<input type="button" class="btn btn-success" value="Yeni Ürün Ekle" onclick="myFunction();" />*@
+    </h1>
+
+    @*<div class="actions">
+            <a href="@Url.Action("AddProduct","Category", new { categoryId =categoryId})" class="btn btn-success">
+                <i class="fa fa-plus"></i>
+                Yeni Ürün Ekle
+            </a>
+        </div>*@
+</div>
+
+<input type="hidden" id="CategoryId" value="categoryId" />
+<div style="padding-top:50px" id="Holder-Products">
+
+</div>
+
+
+<div class="col-sm-9 col-md-10 main">
+    <table class="table">
+        <tr>
+            <th><strong>Ürün Adı</strong></th>
+            <th><strong>Ürün Açıklaması</strong></th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            @item.ProductName
+            <br />
+        }
+
+        <tr>
+            <td colspan="5" class="deneme">
+                @Html.PagedListPager(Model, page => Url.Action("Details", new { page }))
+                @*<pager lis />*@
+            </td>
+        </tr>
+
+    </table>
+
+
+</div>
+

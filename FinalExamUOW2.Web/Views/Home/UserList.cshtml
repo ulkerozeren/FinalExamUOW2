@@ -1,0 +1,31 @@
+﻿@model X.PagedList.PagedList<FinalExamUOW2.Data.Models.User>
+@using X.PagedList.Mvc.Core
+@{
+    Layout = null;
+}
+<style>
+  
+    .pagination-container {
+        list-style: none;
+    }
+
+    .pagination-container li {
+        display: inline;
+    }
+
+</style>
+
+<h1>User List</h1>
+
+@foreach (var item in Model)
+{
+    @item.FirstName
+    <br />
+}
+
+<tr>
+    <td colspan="5">
+        @Html.PagedListPager(Model, page => Url.Action("UserList", new { page }))
+        <pager lis />
+    </td>
+</tr>

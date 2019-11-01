@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RabbitMQ.Client" Version="5.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinalExamUOW2.Data\FinalExamUOW2.Data.csproj" />
+    <ProjectReference Include="..\FinalExamUOW2.Service\FinalExamUOW2.Service.csproj" />
+  </ItemGroup>
+
+</Project>

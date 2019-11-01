@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FinalExamUOW2.Data.Models.Category>
+
+<div id="menu">
+    <ul>
+        @foreach (var category in Model)
+        {
+            // <li>dfsf</li>
+            <li> <a href="@Url.Action("Details", "Product", new { id = category.CategoryID})" class="list-group-item">@category.CategoryName</a></li>
+        }
+    </ul>
+</div>
+
+

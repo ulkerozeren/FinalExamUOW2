@@ -1,0 +1,11 @@
+﻿@model X.PagedList.PagedList<FinalExamUOW2.Data.Models.User>
+@using X.PagedList.Mvc.Core
+
+
+
+<tr>
+    <td colspan="5">
+        @Html.PagedListPager(Model, page => Url.Action("UserList", new { page }))
+        <pager lis />
+    </td>
+</tr>
